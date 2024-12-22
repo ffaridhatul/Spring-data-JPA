@@ -68,8 +68,6 @@ public class CollectionTest {
         Member member = entityManager.find(Member.class, "2");
         member.setSkills(new HashMap<>());
         member.getSkills().put("Java", 100);
-        member.getSkills().put("PHP", 80);
-        member.getSkills().put("JavaScript", 80);
         entityManager.merge(member);
 
 
