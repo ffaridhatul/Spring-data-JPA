@@ -1,0 +1,33 @@
+package programmerzamannow.jpa.entity;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
+import org.junit.jupiter.api.Test;
+import programmerzamannow.jpa.util.JpaUtil;
+
+public class ColectionTest {
+
+    @Test
+    void embeddedId() {
+        EntityManagerFactory entityManagerFactory = JpaUtil.getEntityManagerFactory();
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+
+        // Manipulate Database
+        DepartmentId departmentId = new DepartmentId();
+        departmentId.setCompanyId("pnz");
+        departmentId.setDepartmentId("tech");
+
+        Department department = new Department();
+        department.setId(departmentId);
+        department.setName("IT");
+
+        entityManager.persist(department);
+
+        entityTransaction.commit();
+        entityManager.close();
+        entityManagerFactory.close(); // Close EntityManagerFactory
+    }
+}
