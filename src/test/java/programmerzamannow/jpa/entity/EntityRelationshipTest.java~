@@ -130,6 +130,8 @@ public class EntityRelationshipTest {
         // Manipulate Database
         Product product = entityManager.find(Product.class, "p1");
         Brand brand = product.getBrand();
+        Assertions.assertNotNull(brand);
+
         entityTransaction.commit();
         entityManager.close();
     }

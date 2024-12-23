@@ -120,7 +120,9 @@ public class EntityRelationshipTest {
 
         entityTransaction.commit();
         entityManager.close();
-    }@Test
+    }
+
+    @Test
     void fetch() {
         EntityManagerFactory entityManagerFactory = JpaUtil.getEntityManagerFactory();
         EntityManager entityManager = entityManagerFactory.createEntityManager();

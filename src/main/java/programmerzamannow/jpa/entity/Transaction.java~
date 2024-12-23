@@ -1,0 +1,22 @@
+package programmerzamannow.jpa.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "transactions")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Data
+public class Transaction {
+
+    private String id;
+
+    private Long balance;
+
+    private LocalDateTime
+}
