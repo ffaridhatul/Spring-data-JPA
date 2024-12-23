@@ -1,0 +1,4 @@
+package programmerzamannow.jpa.entity;
+
+public class Brands {
+}
