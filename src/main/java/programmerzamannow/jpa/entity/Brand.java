@@ -13,10 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "brands")
-public class Brand {
-
-    @Id
-    private String id;
+public class Brand extends AudiTableEntity<String> {
 
     private String name;
 

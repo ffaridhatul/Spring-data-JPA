@@ -1,0 +1,18 @@
+package programmerzamannow.jpa.entity;
+
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+@MappedSuperclass
+public abstract class AudiTableEntity <T extends Serializable>{
+
+    @Id
+    private T id;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
+}
