@@ -22,6 +22,5 @@ public class Brand extends AudiTableEntity<String> {
     @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Product> products = new ArrayList<>(); // Inisialisasi di sini
 
-    @Version
-    private Long version;
+    private Long 
 }
