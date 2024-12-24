@@ -39,21 +39,5 @@ public class Member {
     @Column(name = "value")
     private Map<String, Integer> skills;
 
-    public String getFullName() {
-        StringBuilder fullName = new StringBuilder();
-        if (name.getTitle() != null) {
-            fullName.append(name.getTitle()).append(" ");
-        }
-        if (name.getFirstName() != null) {
-            fullName.append(name.getFirstName()).append(" ");
-        }
-        if (name.getMiddleName() != null) {
-            fullName.append(name.getMiddleName()).append(" ");
-        }
-        if (name.getLastName() != null) {
-            fullName.append(name.getLastName());
-        }
-        return fullName.toString().trim();
-    }
-
+    public String getFullName() { StringBuilder fullName = new StringBuilder(); if (name.getTitle() != null) { fullName.append(name.getTitle()).append(" "); } if (name.getFirstName() != null) { fullName.append(name.getFirstName()).append(" "); } if (name.getMiddleName() != null) { fullName.append(name.getMiddleName()).append(" "); } if (name.getLastName() != null) { fullName.append(name.getLastName()); } return fullName.toString().trim(); }
 }

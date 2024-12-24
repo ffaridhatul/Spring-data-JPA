@@ -13,6 +13,11 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "brands")
+@NamedQueries({
+        @NamedQuery(name = "Brand.findAll", query = "select b from Brand b"),
+        @NamedQuery(name = "Brand.findAllByName", query = "select b from Brand b where b.name = :name"),
+})
+
 public class Brand extends AudiTableEntity<String> {
 
     private String name;
@@ -22,5 +27,6 @@ public class Brand extends AudiTableEntity<String> {
     @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Product> products = new ArrayList<>(); // Inisialisasi di sini
 
-    private Long 
+    @Version
+    private Long version;
 }
